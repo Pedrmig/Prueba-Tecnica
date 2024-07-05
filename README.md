@@ -35,4 +35,4 @@ In this step, a model will be applied to the dataset to either classify the data
 ### Obtaining Results, Visualization, and Conclusions
 After executing the model and obtaining results, you should derive conclusions, answers to the problem, and visualizations of the results, as well as the message to be conveyed.
 
-!([foto.png](https://github.com/Pedrmig/Prueba-Tecnica/blob/main/PruebaTecnica.png))
+!([PruebaTecnica.png](https://github.com/Pedrmig/Prueba-Tecnica/blob/main/PruebaTecnica.png))
