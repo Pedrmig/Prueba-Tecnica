@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 modelo_train_prueba.pkl filter=lfs diff=lfs merge=lfs -text
+modelo_prueba.pkl filter=lfs diff=lfs merge=lfs -text

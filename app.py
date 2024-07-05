@@ -72,31 +72,31 @@ def main():
     STATE = state_flag[state_selecionado]
    
     def predict(model, input_data):
-        input_array = np.array(list(input_data.values())).reshape(1, -1)
+        input_array = np.array(input_data).reshape(1, -1)
         prediction = model.predict(input_array)
         return prediction[0]
     
     if st.button("Enviar"):
-        datos = {
-            "CODE_GENDER": CODE_GENDER,
-            "FLAG_OWN_CAR": FLAG_OWN_CAR,
-            "FLAG_OWN_REALTY": FLAG_OWN_REALTY,
-            "CNT_CHILDREN": CNT_CHILDREN,
-            "AMT_INCOME_TOTAL": AMT_INCOME_TOTAL,
-            "NAME_INCOME_TYPE": NAME_INCOME_TYPE,
-            "NAME_EDUCATION_TYPE": NAME_EDUCATION_TYPE,
-            "NAME_FAMILY_STATUS": NAME_FAMILY_STATUS,
-            "NAME_HOUSING_TYPE": NAME_HOUSING_TYPE,
-            "DAYS_EMPLOYED": DAYS_EMPLOYED,
-            "FLAG_MOBIL": FLAG_MOBIL,
-            "FLAG_WORK_PHONE": FLAG_WORK_PHONE,
-            "FLAG_PHONE": FLAG_PHONE,
-            "FLAG_EMAIL": FLAG_EMAIL,
-            "OCCUPATION_TYPE": OCCUPATION_TYPE,
-            "CNT_FAM_MEMBERS": CNT_FAM_MEMBERS,
-            "ANO": ANO,
-            "STATE": STATE
-            }
+        datos = [
+            CODE_GENDER,
+            FLAG_OWN_CAR,
+            FLAG_OWN_REALTY,
+            CNT_CHILDREN,
+            AMT_INCOME_TOTAL,
+            NAME_INCOME_TYPE,
+            NAME_EDUCATION_TYPE,
+            NAME_FAMILY_STATUS,
+            NAME_HOUSING_TYPE,
+            DAYS_EMPLOYED,
+            FLAG_MOBIL,
+            FLAG_WORK_PHONE,
+            FLAG_PHONE,
+            FLAG_EMAIL,
+            OCCUPATION_TYPE,
+            CNT_FAM_MEMBERS,
+            ANO,
+            STATE
+        ]
         
         predicted = predict(train_model, datos)
         st.write(f"El Cliente es considerado: {predicted:.2f}")
