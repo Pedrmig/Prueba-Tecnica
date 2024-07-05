@@ -15,7 +15,7 @@ First, you will be provided with three datasets:
 
 ## The Challenge
 
-Using the aforementioned data, can you determine which new clients can be offered a free premium installment?
+Using the aforementioned data, can you determine which new clients can be offered a interest-free installment plan ?
 
 You should assume that the same qualitative information available in the challenge's dataset will be available for these new clients.
 
