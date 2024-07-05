@@ -2,13 +2,6 @@ import streamlit as st
 import joblib
 import numpy as np
 
-# Cargar el modelo
-model_data = joblib.load('modelo_prueba.pkl')
-if isinstance(model_data, tuple):
-    train_model = model_data[0]  
-else:
-    train_model = model_data
-
 def main():
     st.title("Formulario de Datos")
 
@@ -80,6 +73,13 @@ def main():
         prediction = model.predict(input_array)
         return prediction[0]
     
+    # Cargar el modelo
+    model_data = joblib.load('modelo_prueba.pkl')
+    if isinstance(model_data, tuple):
+        train_model = model_data[0]  
+    else:
+        train_model = model_data
+    
     if st.button("Enviar"):
         datos = [
             CODE_GENDER,
@@ -101,12 +101,13 @@ def main():
             ANO,
             STATE
         ]
-        
+    
         predicted = predict(train_model, datos)
         if predicted == 0:
             st.write(f"El Cliente es considerado Buen pagador")
         if predicted == 1:
             st.write(f"El Cliente es considerado Mal pagador")
+
 
 if __name__ == "__main__":
     main()
