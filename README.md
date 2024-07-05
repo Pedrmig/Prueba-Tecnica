@@ -2,6 +2,9 @@
 
 This is an example of a technical assessment used by insurance companies or other enterprises. The dataset provided contains fictitious data.
 
+Here you find the explanation of the proposed test and the link to the Streamlit app in case you want to see the machine learning in action.
+
+
 ## Starting Point
 
 First, you will be provided with three datasets:
