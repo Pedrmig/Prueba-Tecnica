@@ -2,17 +2,16 @@ import streamlit as st
 import joblib
 import numpy as np
 
-# Carregar o modelo e extrair apenas o modelo se um tuplo for retornado
-model_data = joblib.load('modelo_train_prueba.pkl')
+# Cargar el modelo
+model_data = joblib.load('modelo_prueba.pkl')
 if isinstance(model_data, tuple):
-    train_model = model_data[0]  # Assumindo que o modelo está no primeiro elemento do tuplo
+    train_model = model_data[0]  
 else:
     train_model = model_data
 
 def main():
     st.title("Formulario de Datos")
 
-    # Mapeamento de Género
     genero_map = {"Masculino": 1, "Femenino": 0}
     genero_selecionado = st.selectbox("Género", list(genero_map.keys()))
     CODE_GENDER = genero_map[genero_selecionado]
