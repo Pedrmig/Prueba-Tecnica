@@ -2,7 +2,12 @@ import streamlit as st
 import joblib
 import numpy as np
 
-train_model = joblib.load('modelo_train_prueba.pkl')
+# Carregar o modelo e extrair apenas o modelo se um tuplo for retornado
+model_data = joblib.load('modelo_train_prueba.pkl')
+if isinstance(model_data, tuple):
+    train_model = model_data[0]  # Assumindo que o modelo está no primeiro elemento do tuplo
+else:
+    train_model = model_data
 
 def main():
     st.title("Formulario de Datos")
@@ -99,7 +104,10 @@ def main():
         ]
         
         predicted = predict(train_model, datos)
-        st.write(f"El Cliente es considerado: {predicted:.2f}")
+        if predicted == 0:
+            st.write(f"El Cliente es considerado Buen pagador")
+        if predicted == 1:
+            st.write(f"El Cliente es considerado Mal pagador")
 
 if __name__ == "__main__":
     main()
