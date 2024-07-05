@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np
+model_data = joblib.load('modelo_prueba.pkl')
 
 def main():
     st.title("Formulario de Datos")
@@ -74,7 +75,7 @@ def main():
         return prediction[0]
     
     # Cargar el modelo
-    model_data = joblib.load('modelo_prueba.pkl')
+    
     if isinstance(model_data, tuple):
         train_model = model_data[0]  
     else:
